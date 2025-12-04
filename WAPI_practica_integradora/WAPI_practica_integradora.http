@@ -1,0 +1,6 @@
+@WAPI_practica_integradora_HostAddress = http://localhost:5120
+
+GET {{WAPI_practica_integradora_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
