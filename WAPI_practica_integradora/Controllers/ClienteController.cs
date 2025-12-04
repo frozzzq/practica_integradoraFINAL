@@ -9,9 +9,9 @@ namespace WAPI_practica_integradora.Controllers
     [ApiController]
     public class ClienteController : ControllerBase
     {
-        private readonly AppDbContext _context;
+        private readonly gym_context _context;
 
-        public ClienteController(AppDbContext context)
+        public ClienteController(gym_context context)
         {
             _context = context;
         }
