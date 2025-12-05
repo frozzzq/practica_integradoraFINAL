@@ -32,6 +32,7 @@ namespace practica_integradora
 
             socket = new Socket_Cliente();
             socket.MensajeRecibido += MostrarMensaje;
+            socket.MensajeDebug += MostrarDebug;
             socket.Iniciar("192.168.1.83", 5000); //hola
     
         }
@@ -58,7 +59,7 @@ namespace practica_integradora
             });
         }
 
-
+        
 
 
         private async void enviar_queja_Click(object sender, RoutedEventArgs e)
@@ -92,5 +93,9 @@ namespace practica_integradora
             }
         }
 
+        private void listaMensajes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
