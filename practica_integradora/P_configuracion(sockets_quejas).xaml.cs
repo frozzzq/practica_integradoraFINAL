@@ -44,7 +44,6 @@ namespace practica_integradora
             {
                 lock (candadoMensajes)
                 {
-                    // Esto lo verá el usuario, para demostrar la sincronización
                     Application.Current.Dispatcher.Invoke(() =>
                     {
                         listaMensajes.Items.Add("Hilo obtuvo el candado (sección crítica)");
@@ -52,7 +51,6 @@ namespace practica_integradora
                         listaMensajes.Items.Add("Hilo libero el candado");
                     });
 
-                    // Simulamos trabajo dentro del candado
                     Thread.Sleep(500);
                 }
             });
