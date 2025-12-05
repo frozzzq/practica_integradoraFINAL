@@ -30,5 +30,15 @@ namespace practica_integradora
             ventana_inicio RC = new ventana_inicio();
             RC.Show();
         }
+
+        private void btnMinimizar_Click(object sender, RoutedEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+
+        private void btnCerrar_Click(object sender, RoutedEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }
