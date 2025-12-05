@@ -59,6 +59,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="clases\Mensaje.cs" />
+    <Compile Include="clases\Socket_Cliente.cs" />
     <Compile Include="P_configuracion%28sockets_quejas%29.xaml.cs">
       <DependentUpon>P_configuracion%28sockets_quejas%29.xaml</DependentUpon>
     </Compile>
