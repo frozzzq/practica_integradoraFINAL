@@ -40,5 +40,13 @@ namespace practica_integradora
 
             }
         }
+
+        private void Bsoporte_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Bsoporte.IsChecked == true)
+            {
+                registrar_cliente.Navigate(new P_configuracion_sockets_quejas_());
+            }
+        }
     }
 }

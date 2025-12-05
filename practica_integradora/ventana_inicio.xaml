@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:practica_integradora"
         mc:Ignorable="d"
-        Title="ventana_inicio" Height="450" Width="800">
+        Title="ventana_inicio" Height="550" Width="1000">
     <Grid>
 
 
@@ -72,7 +72,7 @@
 
                 <RadioButton x:Name ="Bmembresias" Content="Membresias" FontWeight="Bold" FontSize="12" Foreground="#2F4157" Margin="1,0,0,0" Checked="Bmembresias_Checked"/>
 
-                <RadioButton x:Name ="Bsoporte" Content="Configuracion"  FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0"/>
+                <RadioButton x:Name ="Bsoporte" Content="Configuracion"  FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0" Checked="Bsoporte_Checked"/>
                 
                 <TextBlock x:Name="usuarioactual" FontSize="13" Foreground="#2F4157"/>
 
