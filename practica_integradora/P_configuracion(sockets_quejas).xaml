@@ -55,9 +55,7 @@
                     <TextBlock x:Name="estado_conexion" FontSize="15" Margin="10,20,0,0"/>
                 </StackPanel>
                 <ListBox x:Name="listaMensajes" Width="300" Height="150"/>
-                <TextBlock Text="Actividad de Hilos:" FontSize="14" FontWeight="DemiBold" Margin="5,10,0,0"/>
-                <ListBox x:Name="debugMensajes" Width="300" Height="70"/>
-
+     
             </StackPanel>
 
         </Border>
