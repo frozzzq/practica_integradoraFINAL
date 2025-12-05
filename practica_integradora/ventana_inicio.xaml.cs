@@ -31,5 +31,14 @@ namespace practica_integradora
                 registrar_cliente.Navigate(new P_registrar_cliente());
             }
         }
+
+        private void Bmembresias_Checked(object sender, RoutedEventArgs e)
+        {
+            if (Bmembresias.IsChecked == true)
+            {
+                registrar_cliente.Navigate(new P_registrar_membresia());
+
+            }
+        }
     }
 }

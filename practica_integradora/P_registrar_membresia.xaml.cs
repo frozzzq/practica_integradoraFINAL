@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -23,6 +25,77 @@ namespace practica_integradora
         public P_registrar_membresia()
         {
             InitializeComponent();
+        }
+
+        public class Membresia
+        {
+            public int id_membresia { get; set; }
+            public string nombre { get; set; }
+            public decimal costo { get; set; }
+            public int duracion_dias { get; set; }
+        }
+
+        public async Task RegistrarMembresiaAsync()
+        {
+            var membresia = new
+            {
+                nombre = TBnombre_membresia.Text,
+                costo = decimal.Parse(TBcosto.Text),
+                duracion_dias = int.Parse(TBduracion_dias.Text)
+            };
+
+            string json = JsonConvert.SerializeObject(membresia);
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5120");
+                HttpResponseMessage response = await client.PostAsync("api/membresias", content);
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Membresía registrada exitosamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al registrar membresía");
+                }
+            }
+        }
+
+        public async Task EliminarMembresiaAsync(int idMembresia)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://localhost:5120");
+
+                HttpResponseMessage response = await client.DeleteAsync($"api/membresias/{idMembresia}");
+
+                if (response.IsSuccessStatusCode)
+                {
+                    MessageBox.Show("Membresía eliminada correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Error al eliminar membresía");
+                }
+            }
+        }
+
+        private async void btnEliminarCliente_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private async void btnRegistrarMembresia_Click(object sender, RoutedEventArgs e)
+        {
+            await RegistrarMembresiaAsync();
+        }
+
+        private async void btnEliminarMembresia_Click(object sender, RoutedEventArgs e)
+        {
+            int id = int.Parse(TBid_eliminar.Text);
+            await EliminarMembresiaAsync(id);
         }
     }
 }

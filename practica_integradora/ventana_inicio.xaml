@@ -70,7 +70,7 @@
                 
                 <RadioButton x:Name ="Bclientes" Content="Registrar usuario" FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0" Checked="Bclientes_Checked"/>
 
-                <RadioButton x:Name ="Bmembresias" Content="Usuarios verificados" FontWeight="Bold" FontSize="12" Foreground="#2F4157" Margin="1,0,0,0"/>
+                <RadioButton x:Name ="Bmembresias" Content="Membresias" FontWeight="Bold" FontSize="12" Foreground="#2F4157" Margin="1,0,0,0" Checked="Bmembresias_Checked"/>
 
                 <RadioButton x:Name ="Bsoporte" Content="Configuracion"  FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0"/>
                 

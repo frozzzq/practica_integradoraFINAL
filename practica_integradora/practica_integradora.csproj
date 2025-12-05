@@ -58,6 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clases\Mensaje.cs" />
+    <Compile Include="P_configuracion%28sockets_quejas%29.xaml.cs">
+      <DependentUpon>P_configuracion%28sockets_quejas%29.xaml</DependentUpon>
+    </Compile>
     <Compile Include="P_registrar_cliente.xaml.cs">
       <DependentUpon>P_registrar_cliente.xaml</DependentUpon>
     </Compile>
@@ -83,6 +87,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="P_configuracion%28sockets_quejas%29.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="P_registrar_cliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

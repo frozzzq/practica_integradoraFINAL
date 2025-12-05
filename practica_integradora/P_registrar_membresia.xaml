@@ -37,12 +37,14 @@
                 <TextBlock Text="Duracion:" Margin="0,0,10,0"/>
                 <TextBox x:Name="TBduracion_dias" Width="200"/>
             </StackPanel>
-                
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="ID eliminar:" Margin="0,0,10,0"/>
+                <TextBox x:Name="TBid_eliminar" Width="200"/>
+            </StackPanel>
 
-            <Button x:Name="btnRegistrarCliente" Content="Registrar" />
-            <Button x:Name="btnEliminarCliente" Content="Eliminar" />
-            <Button x:Name="btnMostrarClientes" Content="Mostrar" />
-
+            <Button x:Name="btnRegistrarMembresia" Content="Registrar" Click="btnRegistrarMembresia_Click"  />
+            <Button x:Name="btnEliminarMembresia" Content="Eliminar" Click="btnEliminarMembresia_Click"   />
+         
         </StackPanel>
     </Grid>
 </Page>
