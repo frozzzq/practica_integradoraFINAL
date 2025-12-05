@@ -53,37 +53,79 @@ namespace practica_integradora
             });
         }
 
-
-        private async void enviar_queja_Click(object sender, RoutedEventArgs e)
+        private void EnviarMensaje(MensajeBase mensaje)
         {
-            var mensaje = new MensajeQueja
-            {
-               Usuario = usu.Text,
-               Contenido = queja.Text,
-               Fecha = DateTime.Now,
-            };
-            
-            socket.Enviar(mensaje.Formatear());
-            
-            MessageBox.Show("mensaje enviado");
+            string texto = mensaje.Formatear();
+            socket.Enviar(texto);
         }
-       // public async Task EnviarMensajeSocket(string texto)
-        //{
-          //  try
-            //{
-              //  TcpClient client = new TcpClient("192.168.1.94", 5000);
 
-                //byte[] data = Encoding.UTF8.GetBytes(texto);
-                //NetworkStream stream = client.GetStream();
 
- //               await stream.WriteAsync(data, 0, data.Length);
-   //             client.Close();
-     //       }
-       //     catch (Exception ex)
-         //   {
-           //     MessageBox.Show("Error enviando mensaje: " + ex.Message);
-            //}
-        //}
+        private void enviar_mensaje_Click(object sender, RoutedEventArgs e)
+        {
+            if (tipoMensaje.SelectedItem == null)
+            {
+                MessageBox.Show("Selecciona un tipo de mensaje.");
+                return;
+            }
+
+            string tipo = (tipoMensaje.SelectedItem as ComboBoxItem).Content.ToString();
+
+            MensajeBase mensaje;
+
+            switch (tipo)
+            {
+                case "Queja":
+                    mensaje = new MensajeQueja();
+                    break;
+
+                case "Sugerencia":
+                    mensaje = new MensajeSugerencia();
+                    break;
+
+                case "General":
+                    mensaje = new MensajeGeneral();
+                    break;
+
+                default:
+                    MessageBox.Show("Tipo inválido.");
+                    return;
+            }
+
+            mensaje.Usuario = usu.Text;
+            mensaje.Contenido = queja.Text;
+            mensaje.Fecha = DateTime.Now;
+
+            EnviarMensaje(mensaje);
+            MessageBox.Show("Mensaje enviado.");
+        }
+
+        private void enviar_sugerencia_Click(object sender, RoutedEventArgs e)
+        {
+            MensajeBase mensaje = new MensajeSugerencia()
+            {
+                Usuario = usu.Text,
+                Contenido = queja.Text,
+                Fecha = DateTime.Now
+            };
+
+            EnviarMensaje(mensaje);
+            MessageBox.Show("mensaje enviado");
+
+        }
+
+        private void enviar_general_Click(object sender, RoutedEventArgs e)
+        {
+            MensajeBase mensaje = new MensajeGeneral()
+            {
+                Usuario = usu.Text,
+                Contenido = queja.Text,
+                Fecha = DateTime.Now
+            };
+            EnviarMensaje(mensaje);
+            MessageBox.Show("mensaje enviado");
+
+        }
+ 
 
         private void listaMensajes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

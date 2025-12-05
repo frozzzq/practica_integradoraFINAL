@@ -41,13 +41,26 @@
                     <TextBox x:Name="usu"  Width="200" Margin="10,0,0,0"  Background="Transparent" BorderThickness="0,0,1,1" />
 
                 </StackPanel>
-                
+
+                <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                    <TextBlock Text="Tipo de mensaje:" FontSize="14" Foreground="#FF222F3F" FontWeight="DemiBold" Margin="5,0,0,0"/>
+                    <ComboBox x:Name="tipoMensaje" Width="200" Margin="10,0,0,0">
+                        <ComboBoxItem Content="Queja"/>
+                        <ComboBoxItem Content="Sugerencia"/>
+                        <ComboBoxItem Content="General"/>
+                    </ComboBox>
+                </StackPanel>
+
                 <StackPanel Orientation="Horizontal">
                     
-                    <TextBlock Text="Envia tu queja: " FontSize="14" Foreground="#FF222F3F" FontWeight="DemiBold" Margin="5,0,0,0"/>
+                    <TextBlock Text="Envia tu mensaje: " FontSize="14" Foreground="#FF222F3F" FontWeight="DemiBold" Margin="5,0,0,0"/>
                     <TextBox x:Name="queja"  Width="200" Margin="10,0,0,0"  Background="Transparent" BorderThickness="0,0,1,1" />
-                    <Button x:Name="enviar_queja" Content="ENVIAR"  Margin="10,0,0,0" Background="#577C8E" Foreground="White" BorderBrush="Transparent" 
-                         BorderThickness="0" Click="enviar_queja_Click"/>
+                    <Button x:Name="enviar_mensaje" Content="ENVIAR"
+                    Margin="10,0,0,0"
+                    Background="#577C8E" Foreground="White"
+                    BorderBrush="Transparent"
+                    BorderThickness="0"
+                    Click="enviar_mensaje_Click"/> 
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">

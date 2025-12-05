@@ -99,7 +99,7 @@ namespace practica_integradora.clases
                     MensajeRecibido?.Invoke(mensaje);
                 }
 
-                Thread.Sleep(2000);
+                Thread.Sleep(4000);
             }
         }
 
