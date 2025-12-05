@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace practica_integradora.clases
 {
@@ -63,6 +64,9 @@ namespace practica_integradora.clases
             }
             catch { }
         }
+
+        
+
 
         private void ProcesarMensajes()
         {

@@ -56,7 +56,13 @@ namespace practica_integradora
             });
         }
 
-        
+        private void MostrarDebug(string mensaje)
+        {
+            Application.Current.Dispatcher.Invoke(() =>
+            {
+                listaHilos.Items.Add(mensaje);
+            });
+        }
 
 
         private async void enviar_queja_Click(object sender, RoutedEventArgs e)
