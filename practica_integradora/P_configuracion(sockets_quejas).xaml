@@ -38,7 +38,7 @@
                 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Envia tu queja: " FontSize="14" Foreground="#FF222F3F" FontWeight="DemiBold" Margin="5,0,0,0"/>
-                    <TextBox x:Name="queja"  Width="200" Margin="10,0,0,0" Background="Transparent" BorderThickness="0,0,1,1" />
+                    <TextBox x:Name="queja"  Width="200" Margin="10,0,0,0" TextChanged="queja_TextChanged" Background="Transparent" BorderThickness="0,0,1,1" />
                     <Button x:Name="enviar_queja" Content="ENVIAR"  Margin="10,0,0,0" Background="#577C8E" Foreground="White" BorderBrush="Transparent" 
                          BorderThickness="0"/>
                 </StackPanel>
