@@ -10,25 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace practica_integradora
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para ventana_inicio.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ventana_inicio : Window
     {
-        public MainWindow()
+        public ventana_inicio()
         {
             InitializeComponent();
         }
 
-        private void iniciar_Click(object sender, RoutedEventArgs e)
+        private void Bclientes_Checked(object sender, RoutedEventArgs e)
         {
-            ventana_inicio RC = new ventana_inicio();
-            RC.Show();
+            if (Bclientes.IsChecked == true)
+            {
+                registrar_cliente.Navigate(new P_registrar_cliente());
+            }
         }
     }
 }

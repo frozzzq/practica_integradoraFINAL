@@ -16,19 +16,13 @@ using System.Windows.Shapes;
 namespace practica_integradora
 {
     /// <summary>
-    /// Lógica de interacción para MainWindow.xaml
+    /// Lógica de interacción para P_registrar_membresia.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class P_registrar_membresia : Page
     {
-        public MainWindow()
+        public P_registrar_membresia()
         {
             InitializeComponent();
-        }
-
-        private void iniciar_Click(object sender, RoutedEventArgs e)
-        {
-            ventana_inicio RC = new ventana_inicio();
-            RC.Show();
         }
     }
 }

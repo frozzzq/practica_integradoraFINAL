@@ -1,6 +1,7 @@
 ﻿using DB;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WAPI_practica_integradora.Data;
 
 namespace WAPI_practica_integradora.Controllers
@@ -27,6 +28,32 @@ namespace WAPI_practica_integradora.Controllers
 
             return Ok(new { mensaje = "Cliente guardado en BD", cliente.id });
         }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCliente(int id)
+        {
+            var cliente = await _context.Clientes.FindAsync(id);
+
+            if (cliente == null)
+                return NotFound();
+
+            _context.Clientes.Remove(cliente);
+            await _context.SaveChangesAsync();
+
+            return NoContent(); // Eliminado correctamente
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Cliente>>> GetClientes()
+        {
+            var clientes = await _context.Clientes.ToListAsync();
+            return Ok(clientes);
+        }
+
+
+
+
+
     }
 }
 

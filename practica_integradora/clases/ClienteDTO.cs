@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace practica_integradora.clases
 {
-    internal class ClienteDTO
+    public class ClienteDTO
     {
         public int id { get; set; }
         public string nombre { get; set; }

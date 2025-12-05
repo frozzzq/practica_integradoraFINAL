@@ -58,8 +58,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="registrar_cliente.xaml.cs">
-      <DependentUpon>registrar_cliente.xaml</DependentUpon>
+    <Compile Include="P_registrar_cliente.xaml.cs">
+      <DependentUpon>P_registrar_cliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_registrar_membresia.xaml.cs">
+      <DependentUpon>P_registrar_membresia.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ventana_inicio.xaml.cs">
+      <DependentUpon>ventana_inicio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="V_DG_clientes_registrados.xaml.cs">
+      <DependentUpon>V_DG_clientes_registrados.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -74,7 +83,19 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="registrar_cliente.xaml">
+    <Page Include="P_registrar_cliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_registrar_membresia.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ventana_inicio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="V_DG_clientes_registrados.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -106,5 +127,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

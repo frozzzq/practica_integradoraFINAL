@@ -1,11 +1,14 @@
-﻿<Window x:Class="practica_integradora.registrar_cliente"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:practica_integradora"
-        mc:Ignorable="d"
-        Title="registrar_cliente" Height="400" Width="400">
+﻿<Page x:Class="practica_integradora.P_registrar_cliente"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:practica_integradora"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="400"
+      Title="P_registrar_cliente"
+      Background="White">
+
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -20,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <TextBlock Grid.Column="1" Text="REGISTRO DE CLIENTE" HorizontalAlignment="Center"
-                   FontSize="20"/>
+               FontSize="20"/>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Nombre:" Margin="0,0,10,0"/>
@@ -39,11 +42,14 @@
                 <TextBox x:Name="TBtelefono" Width="200"/>
             </StackPanel>
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Fecha:" Margin="0,0,10,0"/>
-                <TextBox x:Name="TBfecha" Width="200"/>
+                <TextBlock Text="ID eliminar:" Margin="0,0,10,0"/>
+                <TextBox x:Name="TBid" Width="200"/>
             </StackPanel>
-            
+
             <Button x:Name="btnRegistrarCliente" Content="Registrar" Click="btnRegistrarCliente_Click" />
+            <Button x:Name="btnEliminarCliente" Content="Eliminar" Click="btnEliminarCliente_Click"/>
+            <Button x:Name="btnMostrarClientes" Content="Mostrar" Click="btnMostrarClientes_Click"/>
+
         </StackPanel>
     </Grid>
-</Window>
+</Page>

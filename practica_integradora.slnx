@@ -1,5 +1,5 @@
 <Solution>
   <Project Path="DB/DB.csproj" />
-  <Project Path="practica_integradora/practica_integradora.csproj" />
+  <Project Path="practica_integradora/practica_integradora.csproj" Id="7523d9fe-054d-42ff-aa27-030f792146a8" />
   <Project Path="WAPI_practica_integradora/WAPI_practica_integradora.csproj" />
 </Solution>

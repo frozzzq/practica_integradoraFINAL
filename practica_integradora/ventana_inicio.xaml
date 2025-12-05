@@ -1,0 +1,88 @@
+﻿<Window x:Class="practica_integradora.ventana_inicio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:practica_integradora"
+        mc:Ignorable="d"
+        Title="ventana_inicio" Height="450" Width="800">
+    <Grid>
+
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="150"/>
+            <ColumnDefinition Width="*"/>
+
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="70"/>
+        </Grid.RowDefinitions>
+
+
+        <Border Grid.Row="0" Grid.RowSpan="3">
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                    <GradientStop Color="#F4EFEB" Offset="0.0"/>
+                    <GradientStop Color="#577C8E" Offset="1.0" />
+                </LinearGradientBrush>
+
+            </Border.Background>
+        </Border>
+
+        <StackPanel Grid.Row="3">
+            <TextBlock Text="No tienes una cuenta?" FontWeight="DemiBold"/>
+            <Button x:Name="registro" Content="Registrarse" Background="Transparent"
+                Foreground="Blue" />
+            <TextBlock Text="O" HorizontalAlignment="Center"/>
+            <Button x:Name="inicio_sesion" Content="iniciar sesion" Background="Transparent"
+    Foreground="Blue" />
+
+        </StackPanel>
+
+
+
+
+        <TextBlock Text="BYLE" FontSize="20" FontWeight="Bold" Foreground="#2F4157"
+        HorizontalAlignment="Center" Grid.Column="0"/>
+
+        <Grid Grid.Row="0" Grid.Column="1" Grid.RowSpan="3">
+            <Border BorderBrush="#C7D9E5" BorderThickness="10">
+                <Frame x:Name="registrar_cliente" Grid.Column="1" Grid.Row="1" NavigationUIVisibility="Hidden">
+
+                </Frame>
+
+
+            </Border>
+
+        </Grid>
+
+
+
+
+        <StackPanel  Orientation ="Horizontal" Grid.Row="1" >
+            <StackPanel Orientation="Vertical" Grid.Column="0"  Width="150" >
+
+                
+                <RadioButton x:Name ="Bclientes" Content="Registrar usuario" FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0" Checked="Bclientes_Checked"/>
+
+                <RadioButton x:Name ="Bmembresias" Content="Usuarios verificados" FontWeight="Bold" FontSize="12" Foreground="#2F4157" Margin="1,0,0,0"/>
+
+                <RadioButton x:Name ="Bsoporte" Content="Configuracion"  FontWeight="Bold" FontSize="13" Foreground="#2F4157" Margin="1,0,0,0"/>
+                
+                <TextBlock x:Name="usuarioactual" FontSize="13" Foreground="#2F4157"/>
+
+
+
+            </StackPanel>
+        </StackPanel>
+
+
+
+
+    </Grid>
+</Window>
