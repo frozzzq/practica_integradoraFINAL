@@ -27,8 +27,8 @@ namespace practica_integradora
 
         private void iniciar_Click(object sender, RoutedEventArgs e)
         {
-            ventana_inicio RC = new ventana_inicio();
-            RC.Show();
+            V_inicio_sesion IS = new V_inicio_sesion();
+            IS.Show();
         }
 
         private void btnMinimizar_Click(object sender, RoutedEventArgs e)

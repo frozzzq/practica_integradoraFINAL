@@ -58,8 +58,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="clases\lista_usuarios.cs" />
     <Compile Include="clases\Mensaje.cs" />
     <Compile Include="clases\Socket_Cliente.cs" />
+    <Compile Include="clases\usuario.cs" />
     <Compile Include="P_configuracion%28sockets_quejas%29.xaml.cs">
       <DependentUpon>P_configuracion%28sockets_quejas%29.xaml</DependentUpon>
     </Compile>
@@ -74,6 +76,9 @@
     </Compile>
     <Compile Include="V_DG_clientes_registrados.xaml.cs">
       <DependentUpon>V_DG_clientes_registrados.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="V_inicio_sesion.xaml.cs">
+      <DependentUpon>V_inicio_sesion.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -105,6 +110,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="V_DG_clientes_registrados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="V_inicio_sesion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
