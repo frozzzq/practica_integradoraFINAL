@@ -11,7 +11,7 @@ namespace practica_integradora.clases
         private TcpClient client;
         private NetworkStream stream;
         private Thread hiloRecepcion;
-        // ----- NUEVO: VARIABLES PARA HILOS SINCRONIZADOS -----
+
         private readonly object candado = new object();
         private Queue<string> colaMensajes = new Queue<string>();
         private Thread hiloProcesamiento;
@@ -19,7 +19,6 @@ namespace practica_integradora.clases
 
 
         public event Action<string> MensajeRecibido;
-        // Evento extra para mostrar mensajes técnicos de hilos
         public event Action<string> MensajeDebug;
 
 
@@ -30,12 +29,10 @@ namespace practica_integradora.clases
 
             stream = client.GetStream();
 
-            // Iniciar hilo de recepción
             hiloRecepcion = new Thread(RecibirMensajes);
             hiloRecepcion.IsBackground = true;
             hiloRecepcion.Start();
 
-            // Iniciar hilo de procesamiento
             hiloProcesamiento = new Thread(ProcesarMensajes);
             hiloProcesamiento.IsBackground = true;
             hiloProcesamiento.Start();
