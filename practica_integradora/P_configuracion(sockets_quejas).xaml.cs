@@ -30,7 +30,7 @@ namespace practica_integradora
 
             socket = new Socket_Cliente();
             socket.MensajeRecibido += MostrarMensaje;
-            socket.Iniciar("192.168.1.94", 5000); //hola
+            socket.Iniciar("192.168.1.83", 5000); //hola
         }
 
         private void MostrarMensaje(string mensaje)
