@@ -35,24 +35,13 @@ namespace practica_integradora
             socket.Iniciar("192.168.1.83", 5000); //hola
     
         }
-        public event Action<string> MensajeDebug;
 
 
         private void MostrarMensaje(string mensaje)
         {
-            Task.Run(() =>
+            Application.Current.Dispatcher.Invoke(() =>
             {
-                lock (candadoMensajes)
-                {
-                    Application.Current.Dispatcher.Invoke(() =>
-                    {
-                        listaMensajes.Items.Add("Hilo obtuvo el candado (sección crítica)");
-                        listaMensajes.Items.Add(mensaje);
-                        listaMensajes.Items.Add("Hilo libero el candado");
-                    });
-
-                    Thread.Sleep(500);
-                }
+                listaMensajes.Items.Add(mensaje);
             });
         }
 
@@ -78,23 +67,23 @@ namespace practica_integradora
             
             MessageBox.Show("mensaje enviado");
         }
-        public async Task EnviarMensajeSocket(string texto)
-        {
-            try
-            {
-                TcpClient client = new TcpClient("192.168.1.94", 5000);
+       // public async Task EnviarMensajeSocket(string texto)
+        //{
+          //  try
+            //{
+              //  TcpClient client = new TcpClient("192.168.1.94", 5000);
 
-                byte[] data = Encoding.UTF8.GetBytes(texto);
-                NetworkStream stream = client.GetStream();
+                //byte[] data = Encoding.UTF8.GetBytes(texto);
+                //NetworkStream stream = client.GetStream();
 
-                await stream.WriteAsync(data, 0, data.Length);
-                client.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error enviando mensaje: " + ex.Message);
-            }
-        }
+ //               await stream.WriteAsync(data, 0, data.Length);
+   //             client.Close();
+     //       }
+       //     catch (Exception ex)
+         //   {
+           //     MessageBox.Show("Error enviando mensaje: " + ex.Message);
+            //}
+        //}
 
         private void listaMensajes_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {

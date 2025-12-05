@@ -12,14 +12,14 @@
     <Grid>
 
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="20"/>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="20"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
         </Grid.RowDefinitions>
 
         <Border Grid.Column="1" Grid.Row="1" BorderThickness="6" BorderBrush="#577C8E"
@@ -52,11 +52,11 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Estatus de conexion:" FontSize="14" FontWeight="DemiBold" Margin="5,15,0,0"/>
-                    <TextBlock x:Name="estado_conexion" FontSize="15" Margin="10,20,0,0"/>
+                    <TextBlock x:Name="estado_conexion" FontSize="15" Margin="10,5,0,0"/>
                 </StackPanel>
-                <ListBox x:Name="listaMensajes" Width="300" Height="120" SelectionChanged="listaMensajes_SelectionChanged"/>
+                <ListBox x:Name="listaMensajes" Width="500" Height="100" SelectionChanged="listaMensajes_SelectionChanged" Margin="100,0,0,0"/>
                 <TextBlock Text="Estatus de hilos:" FontSize="14" FontWeight="DemiBold" Margin="5,15,0,0"/>
-                <ListBox x:Name="listaHilos" Width="300" Height="100"  Margin="0,0,0,0"/>
+                <ListBox x:Name="listaHilos" Width="500" Height="140"  Margin="100,0,0,0"/>
 
             </StackPanel>
 
